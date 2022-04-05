@@ -1,19 +1,14 @@
 package com.github.bigbox89;
-
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
+import org.springframework.context.annotation.ComponentScan;
 
-@SpringBootApplication
-public class HelloJenkinsApplication {
+@ComponentScan
+@EnableAutoConfiguration
+public class HelloJenkinsApplication extends SpringBootServletInitializer {
 
 	public static void main(String[] args) {
 		SpringApplication.run(HelloJenkinsApplication.class, args);
-	}
-	// 1. Annotation
-	@RequestMapping("/")
-	// 3. Method that maps to the request route above
-	public String hello() { // 3
-		return "Hello World!";
 	}
 }
